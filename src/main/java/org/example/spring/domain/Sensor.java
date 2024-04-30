@@ -43,6 +43,15 @@ public class Sensor {
     @Column(name = "pressure")
     private float pressure;
 
+    @Column(name = "latitude")
+    private float latitude;
+
+    @Column(name = "longitude")
+    private float longitude;
+
+    @Column(name = "altitude")
+    private float altitude;
+
     @PrePersist
     private void prePersist(){
         this.date=LocalDateTime.now();
