@@ -53,7 +53,7 @@ public class Sensor {
     private float altitude;
 
     @PrePersist
-    private void prePersist(){
-        this.date=LocalDateTime.now();
+    private void prePersist() {
+        this.date = LocalDateTime.now();
     }
 }

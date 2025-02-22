@@ -6,6 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+
+import lombok.*;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -22,12 +30,25 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "surname")
+    private String surname;
+
+    @Email
+    @NotBlank
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "birthday")
+    private LocalDate birthday;
+
     @Column(name = "photoUrl")
     private String photoUrl;
+
+    @NotBlank
+    @Column(name = "password")
+    private String password;
+
 }
